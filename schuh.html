@@ -71,10 +71,25 @@
             z-index: 2;
         }
 
+        .watermark-text {
+            position: absolute;
+            bottom: 10px;
+            left: 2%;
+            transform: translateX(-50%);
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            color: #ffffff;
+            z-index: 2;
+        }
+
         .button-container {
             text-align: center;
             position: absolute;
-            bottom: 375px;
+            bottom: 400px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -156,6 +171,11 @@
         smallerTextOverlay.innerHTML = 'or not.';
         document.body.appendChild(smallerTextOverlay);
 
+        const bottomCenterText = document.createElement('div');
+        bottomCenterText.className = 'watermark-text';
+        bottomCenterText.innerHTML = '@schuh';
+        document.body.appendChild(bottomCenterText);
+
         window.addEventListener('resize', () => {
             const newWidth = window.innerWidth;
             const newHeight = window.innerHeight;
@@ -175,6 +195,6 @@
 
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Silky.lua">
-<meta property="og:description" content='"dhfhasdgfhasgdfdchgasdd" - luaxx'>
+<meta property="og:description" content='Leading Da Hood Script since 1975. Join Silky.lua today!'>
 <meta property="og:image" content="https://luaxx.com/Resources/Icon.png">
 <meta property="og:url" content="https://luaxx.com">
