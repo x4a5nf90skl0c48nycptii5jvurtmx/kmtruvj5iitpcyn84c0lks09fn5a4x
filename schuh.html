@@ -1,6 +1,178 @@
-<meta name="theme-color" content="#000000">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>schuh.lua</title>
+    <link rel="icon" href="https://luaxx.com/Resources/Icon.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #171717;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Courier New', monospace;
+            font-size: 36px;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            z-index: 2;
+        }
+
+        .rainbow-text {
+            display: inline-block;
+            animation: animate-rainbow 5s linear infinite;
+        }
+
+        @keyframes animate-rainbow {
+            0% {
+                color: #ff0000;
+            }
+            14% {
+                color: #ff8000;
+            }
+            28% {
+                color: #ffff00;
+            }
+            42% {
+                color: #00ff00;
+            }
+            57% {
+                color: #0000ff;
+            }
+            71% {
+                color: #8000ff;
+            }
+            85% {
+                color: #ff00ff;
+            }
+            100% {
+                color: #ff0000;
+            }
+        }
+
+        .smaller-text {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            text-align: center;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            color: #ffffff;
+            z-index: 2;
+        }
+
+        .button-container {
+            text-align: center;
+            position: absolute;
+            bottom: 375px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #ffffff;
+            text-decoration: none;
+            user-select: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+
+        .button:hover {
+            background-color: transparent;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            opacity: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const geometry = new THREE.ConeGeometry(6, 12, 4);
+        const edges = new THREE.EdgesGeometry(geometry);
+        const outlineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+        const transparentMaterial = new THREE.MeshBasicMaterial({ color: 0x3498db, transparent: true, opacity: 0.0 });
+        const pyramid = new THREE.Group();
+
+        const transparentMesh = new THREE.Mesh(geometry, transparentMaterial);
+        pyramid.add(transparentMesh);
+
+        const outline = new THREE.LineSegments(edges, outlineMaterial);
+        pyramid.add(outline);
+
+        scene.add(pyramid);
+
+        pyramid.position.z = -20;
+
+        const animate = () => {
+            requestAnimationFrame(animate);
+            pyramid.rotation.x += 0.0045;
+            pyramid.rotation.y += 0.0045;
+            renderer.render(scene, camera);
+        };
+
+        camera.position.z = -20;
+
+        const textOverlay = document.createElement('div');
+        textOverlay.className = 'text-overlay';
+        textOverlay.innerHTML = '<span class="rainbow-text">⋆ Silky.lua ⋆</span>';
+        document.body.appendChild(textOverlay);
+
+        const smallerTextOverlay = document.createElement('div');
+        smallerTextOverlay.className = 'smaller-text';
+        smallerTextOverlay.innerHTML = 'or not.';
+        document.body.appendChild(smallerTextOverlay);
+
+        window.addEventListener('resize', () => {
+            const newWidth = window.innerWidth;
+            const newHeight = window.innerHeight;
+            camera.aspect = newWidth / newHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(newWidth, newHeight);
+        });
+
+        animate();
+    </script>
+
+    <div class="button-container">
+        <a href="https://discord.gg/YKPumjRHSE" class="button" style="width: 185px; padding: 10px 30px;">→ Join Discord ←</a>
+    </div>
+</body>
+</html>
+
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:title" content="Silky Invite">
-<meta property="og:description" content="The best cheat ever made :p">
-<meta property="og:image" content="https://cdn.discordapp.com/attachments/1142910624712622192/1142932784315383918/cat.png">
+<meta property="og:description" content='"The best cheat ever made :p" - schuh'>
+<meta property="og:image" content="https://luaxx.com/Resources/Icon.png">
 <meta property="og:url" content="https://luaxx.com">
-<meta http-equiv="refresh" content="0;url=https://discord.gg/hXUyKSCHdy">
