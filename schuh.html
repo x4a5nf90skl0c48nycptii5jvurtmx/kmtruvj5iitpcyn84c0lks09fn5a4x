@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>schuh.lua</title>
+    <title>Silky.lua</title>
     <link rel="icon" href="https://luaxx.com/Resources/Icon.png" type="image/png">
     <style>
         body {
             margin: 0;
             overflow: hidden;
-            background-color: #000000;
+            background-color: #000;
         }
 
         .text-overlay {
@@ -21,7 +21,6 @@
             user-select: none;
             -webkit-user-select: none;
             -moz-user-select: none;
-            z-index: 2;
         }
 
         .rainbow-text {
@@ -68,13 +67,12 @@
             -webkit-user-select: none;
             -moz-user-select: none;
             color: #ffffff;
-            z-index: 2;
         }
 
         .button-container {
             text-align: center;
             position: absolute;
-            bottom: 375px;
+            bottom: 390px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -108,70 +106,47 @@
             opacity: 1;
             pointer-events: none;
         }
+
+        .line-left {
+            position: absolute;
+            top: -10%;
+            left: 10%;
+            width: 2px;
+            height: 120%;
+            background-color: white;
+            transform: rotate(15deg);
+        }
+
+        .line-right {
+            position: absolute;
+            top: -10%;
+            right: 10%;
+            width: 2px;
+            height: 120%;
+            background-color: white;
+            transform: rotate(-15deg);
+        }
     </style>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
+    <div class="text-overlay">
+        <span class="rainbow-text">⋆ Silky.lua ⋆</span>
+    </div>
 
-        const geometry = new THREE.ConeGeometry(6, 12, 4);
-        const edges = new THREE.EdgesGeometry(geometry);
-        const outlineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
-        const transparentMaterial = new THREE.MeshBasicMaterial({ color: 0x3498db, transparent: true, opacity: 0.0 });
-        const pyramid = new THREE.Group();
-
-        const transparentMesh = new THREE.Mesh(geometry, transparentMaterial);
-        pyramid.add(transparentMesh);
-
-        const outline = new THREE.LineSegments(edges, outlineMaterial);
-        pyramid.add(outline);
-
-        scene.add(pyramid);
-
-        pyramid.position.z = -20;
-
-        const animate = () => {
-            requestAnimationFrame(animate);
-            pyramid.rotation.x += 0.0045;
-            pyramid.rotation.y += 0.0045;
-            renderer.render(scene, camera);
-        };
-
-        camera.position.z = -20;
-
-        const textOverlay = document.createElement('div');
-        textOverlay.className = 'text-overlay';
-        textOverlay.innerHTML = '<span class="rainbow-text">⋆ Silky.lua ⋆</span>';
-        document.body.appendChild(textOverlay);
-
-        const smallerTextOverlay = document.createElement('div');
-        smallerTextOverlay.className = 'smaller-text';
-        smallerTextOverlay.innerHTML = 'or not.';
-        document.body.appendChild(smallerTextOverlay);
-
-        window.addEventListener('resize', () => {
-            const newWidth = window.innerWidth;
-            const newHeight = window.innerHeight;
-            camera.aspect = newWidth / newHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(newWidth, newHeight);
-        });
-
-        animate();
-    </script>
+    <div class="smaller-text">
+        or not.
+    </div>
 
     <div class="button-container">
         <a href="https://discord.gg/YKPumjRHSE" class="button" style="width: 185px; padding: 10px 30px;">→ Join Discord ←</a>
     </div>
+
+    <div class="line-left"></div>
+    <div class="line-right"></div>
 </body>
 </html>
 
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#171717">
 <meta property="og:title" content="Silky Invite">
 <meta property="og:description" content='"The best cheat ever made :p" - schuh'>
 <meta property="og:image" content="https://luaxx.com/Resources/Icon.png">
