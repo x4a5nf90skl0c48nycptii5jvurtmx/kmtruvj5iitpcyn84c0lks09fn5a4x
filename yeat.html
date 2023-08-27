@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@directx13</title>
     <style>
+        .container {
+            border: 2px solid white;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
         body {
             background: url('https://cdn.discordapp.com/attachments/1145186654403952650/1145197275858075668/IMG_3774.gif') center/cover no-repeat;
             text-align: center;
@@ -18,51 +25,20 @@
         }
 
         .text-overlay {
+            font-family: 'Courier New', monospace;
             font-size: 36px;
             user-select: none;
             -webkit-user-select: none;
             -moz-user-select: none;
             z-index: 2;
-            margin-top: 20px;
-        }
-
-        .rainbow-text {
-        display: inline-block;
-        animation: animate-rainbow 5s linear infinite;
-        font-family: 'Courier New', monospace;
-        }
-
-        @keyframes animate-rainbow {
-            0% {
-                color: #ff0000;
-            }
-            14% {
-                color: #ff8000;
-            }
-            28% {
-                color: #ffff00;
-            }
-            42% {
-                color: #00ff00;
-            }
-            57% {
-                color: #0000ff;
-            }
-            71% {
-                color: #8000ff;
-            }
-            85% {
-                color: #ff00ff;
-            }
-            100% {
-                color: #ff0000;
-            }
+            margin-top: -10px;
+            color: #000000;
         }
 
         .description {
             font-family: 'Courier New', monospace;
             font-size: 18px;
-            margin-top: 3px;
+            margin-top: -40px;
             -webkit-user-select: none;
             -moz-user-select: none;
             user-select: none; 
@@ -79,67 +55,77 @@
         }
 
         .button {
-        width: 400px;
-        background: transparent;
-        color: #fff;
-        padding: 10px 0;
-        border: 2px solid #fff;
-        border-radius: 5px;
-        margin: 7px 0;
-        text-decoration: none;
-        display: inline-block;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-    }
+            width: 400px;
+            background: transparent;
+            color: #ffffff;
+            padding: 10px 0;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            margin: 7px 0;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+        }
 
+        #playButton {
+            background: transparent;
+            color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 7px 0;
+        }
 
-    #playButton {
-        background: transparent;
-        color: #fff;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    #playButton span {
-        font-size: 20px;
-        margin-right: 10px;
-    }
-
-    .audio-text {
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-        color: #fff;
-    }
+        .audio-text {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
-    <div class="profile-picture"></div>
-    <div class="text-overlay">
-        <h1 class="rainbow-text">yeat</h1>
+    <div class="container">
+        <div class="profile-picture"></div>
+        <div class="text-overlay">
+            <h1 class="rainbow-text">Schuh</h1>
+        </div> 
+        
+        <p class="description">@directx13 - leh berk</p>
+        
+        <div class="buttons">
+            <a href="https://tiktok.com/@fukyeat" class="button" target="_blank">TikTok</a>
+            <a href="https://instagram.com/yeatpakn?igshid=MjEwN2IyYWYwYw==" class="button" target="_blank">Instagram</a>
+            <a href="https://dose.lol/yun" class="button" target="_blank">dose.lol</a>
+            <a href="https://wanted.lol/yun" class="button" target="_blank">wanted.lol</a>
+            
+            <div id="playButton">
+                <span>&#9654;</span>
+            </div>
+        </div>
+
+        <script>
+            const audioElement = new Audio('https://cdn.discordapp.com/attachments/1145186654403952650/1145202958175313940/y2mate.com_-_Yeat_bigger_then_everything_Directed_by_Cole_Bennett.mp3');
+            audioElement.loop = true;
+
+            const playButton = document.getElementById('playButton');
+            let isPlaying = false;
+
+            playButton.addEventListener('click', function () {
+                if (isPlaying) {
+                    audioElement.pause();
+                    playButton.innerHTML = '<span>&#9654;</span>';
+                } else {
+                    audioElement.play();
+                    playButton.innerHTML = '<span>&#9646;&#9646;</span>';
+                }
+                isPlaying = !isPlaying;
+            });
+        </script>
     </div>
-    <p class="description">@directx13 - leh berk</p>
-    <div class="buttons">
-        <a href="https://tiktok.com/@fukyeat" class="button" target="_blank">TikTok</a>
-        <a href="https://instagram.com/yeatpakn?igshid=MjEwN2IyYWYwYw==" class="button" target="_blank">Instagram</a>
-        <a href="https://dose.lol/yun" class="button" target="_blank">dose.lol</a>
-        <a href="https://wanted.lol/yun" class="button" target="_blank">wanted.lol</a>
-    </div>
-
-    <button id="playButton">
-        <span>&#9654;</span>
-    </button>
-
-    <script>
-        const audioElement = new Audio('https://cdn.discordapp.com/attachments/1145186654403952650/1145202958175313940/y2mate.com_-_Yeat_bigger_then_everything_Directed_by_Cole_Bennett.mp3'); // Replace 'YOUR_AUDIO_URL' with the actual URL of your MP3 file
-
-        document.getElementById('playButton').addEventListener('click', function () {
-            audioElement.play();
-        });
-    </script>
 </body>
 </html>
 
