@@ -91,6 +91,29 @@
         font-family: 'Courier New', monospace;
         font-size: 16px;
     }
+
+
+    #playButton {
+        background: transparent;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #playButton span {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .audio-text {
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        color: #fff;
+    }
     </style>
 </head>
 <body>
@@ -103,8 +126,20 @@
         <a href="https://tiktok.com/@fukyeat" class="button" target="_blank">TikTok</a>
         <a href="https://instagram.com/yeatpakn?igshid=MjEwN2IyYWYwYw==" class="button" target="_blank">Instagram</a>
         <a href="https://dose.lol/yun" class="button" target="_blank">dose.lol</a>
-        <a href="https://wanted.lol/yun" class="button" target="_blank">wanted.lol</a>        
+        <a href="https://wanted.lol/yun" class="button" target="_blank">wanted.lol</a>
     </div>
+
+    <button id="playButton">
+        <span>&#9654;</span>
+    </button>
+
+    <script>
+        const audioElement = new Audio('https://cdn.discordapp.com/attachments/1145186654403952650/1145202958175313940/y2mate.com_-_Yeat_bigger_then_everything_Directed_by_Cole_Bennett.mp3'); // Replace 'YOUR_AUDIO_URL' with the actual URL of your MP3 file
+
+        document.getElementById('playButton').addEventListener('click', function () {
+            audioElement.play();
+        });
+    </script>
 </body>
 </html>
 
