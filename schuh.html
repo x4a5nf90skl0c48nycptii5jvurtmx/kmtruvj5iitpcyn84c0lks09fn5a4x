@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Silky.lua</title>
-    <link rel="icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3209726/language-lua-icon-md.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@directx13</title>
     <style>
         body {
+            background: url('https://cdn.discordapp.com/attachments/1131733214248054896/1145453414961123368/ezgif.com-video-to-gif.gif') center/cover no-repeat;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            overflow: hidden;
-            background-color: #000;
         }
 
         .text-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Courier New', monospace;
             font-size: 36px;
-            text-align: center;
             user-select: none;
             -webkit-user-select: none;
             -moz-user-select: none;
             z-index: 2;
+            margin-top: 20px;
         }
 
         .rainbow-text {
-            display: inline-block;
-            animation: animate-rainbow 5s linear infinite;
+        display: inline-block;
+        animation: animate-rainbow 5s linear infinite;
+        font-family: 'Courier New', monospace;
         }
 
         @keyframes animate-rainbow {
@@ -56,145 +59,85 @@
             }
         }
 
-        .smaller-text {
-            position: absolute;
-            top: 94%;
-            left: 50%;
-            transform: translateX(-50%);
+        .description {
             font-family: 'Courier New', monospace;
-            font-size: 24px;
-            text-align: center;
-            user-select: none;
+            font-size: 18px;
+            margin-top: 3px;
             -webkit-user-select: none;
             -moz-user-select: none;
-            color: #ffffff;
-            z-index: 2;
+            user-select: none; 
         }
 
-        .watermark-text {
-            position: absolute;
-            bottom: 10px;
-            left: 2%;
-            transform: translateX(-50%);
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            text-align: center;
-            user-select: none;
+        .buttons {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             -webkit-user-select: none;
             -moz-user-select: none;
-            color: #ffffff;
-            z-index: 2;
-        }
-
-        .button-container {
-            text-align: center;
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            transform: translateX(-50%);
+            user-select: none;
         }
 
         .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: transparent;
-            color: #ffffff;
-            text-decoration: none;
-            user-select: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            z-index: 2;
-            font-family: 'Courier New', monospace;
-        }
+        width: 400px;
+        background: transparent;
+        color: #fff;
+        padding: 10px 0;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        margin: 7px 0;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+    }
 
-        .button:hover {
-            background-color: transparent;
-        }
 
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 2px solid #ffffff;
-            border-radius: 5px;
-            opacity: 1;
-            z-index: 2;
-            pointer-events: none;
-        }
+    #playButton {
+        background: transparent;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #playButton span {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .audio-text {
+        font-family: 'Courier New', monospace;
+        font-size: 16px;
+        color: #fff;
+    }
     </style>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        const geometry = new THREE.BoxGeometry(10, 10, 10);
-        const edges = new THREE.EdgesGeometry(geometry);
-        const outlineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
-        const transparentMaterial = new THREE.MeshBasicMaterial({ color: 0x3498db, transparent: true, opacity: 0.0 });
-        const cube = new THREE.Group();
-
-        const transparentMesh = new THREE.Mesh(geometry, transparentMaterial);
-        cube.add(transparentMesh);
-
-        const outline = new THREE.LineSegments(edges, outlineMaterial);
-        cube.add(outline);
-
-        scene.add(cube);
-
-        cube.position.z = -20;
-
-        const animate = () => {
-            requestAnimationFrame(animate);
-            cube.rotation.x += 0.0045;
-            cube.rotation.y += 0.0045;
-            renderer.render(scene, camera);
-        };
-
-        camera.position.z = -5.3;
-
-        const textOverlay = document.createElement('div');
-        textOverlay.className = 'text-overlay';
-        textOverlay.innerHTML = '<span class="rainbow-text"><< Silky.lua >></span>';
-        document.body.appendChild(textOverlay);
-
-        const smallerTextOverlay = document.createElement('div');
-        smallerTextOverlay.className = 'smaller-text';
-        smallerTextOverlay.innerHTML = 'or not.';
-        document.body.appendChild(smallerTextOverlay);
-
-        const bottomCenterText = document.createElement('div');
-        bottomCenterText.className = 'watermark-text';
-        bottomCenterText.innerHTML = '@schuh';
-        document.body.appendChild(bottomCenterText);
-
-        window.addEventListener('resize', () => {
-            const newWidth = window.innerWidth;
-            const newHeight = window.innerHeight;
-            camera.aspect = newWidth / newHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(newWidth, newHeight);
-        });
-
-        animate();
-    </script>
-
-    <div class="button-container">
-        <a href="https://discord.gg/YKPumjRHSE" class="button" style="width: 185px; padding: 10px 30px;">→ Join Discord ←</a>
+    <div class="profile-picture"></div>
+    <div class="text-overlay">
+        <h1 class="rainbow-text">Schuh</h1>
     </div>
+    <p class="description">your favorite skid ❤</p>
+    <div class="buttons">
+        <a href="@schuh" class="button" target="_blank">Discord - @schuh</a>
+        <a href="https://discord.gg/YKPumjRHSE" class="button" target="_blank">Silky</a>
+        <a href="https://www.tiktok.com/@oeari" class="button" target="_blank">Tik Tok</a>
+    </div>
+
+    <button id="playButton">
+        <span>&#9654;</span>
+    </button>
+
+    <script>
+        const audioElement = new Audio('https://cdn.discordapp.com/attachments/947087449824321586/1145455426276708522/twisted-x-pxlish-beatz-feel-alive.mp3'); // Replace 'YOUR_AUDIO_URL' with the actual URL of your MP3 file
+
+        document.getElementById('playButton').addEventListener('click', function () {
+            audioElement.play();
+        });
+    </script>
 </body>
 </html>
-
-<meta name="theme-color" content="#000000">
-<meta property="og:title" content="Silky.lua">
-<meta property="og:description" content='really freakin cool dahood cheat !!'>
-<meta property="og:image" content="https://cdn.discordapp.com/icons/1066671072419782668/4f7f70bf1ab57714d0b2cbc93245d185.png?size=4096">
-<meta property="og:url" content="https://luaxx.com">
