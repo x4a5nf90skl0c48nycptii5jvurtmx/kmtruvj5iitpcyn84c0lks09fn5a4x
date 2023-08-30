@@ -3,7 +3,6 @@
 <head>
     <title>Schuh1337</title>
     <link rel="icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3209726/language-lua-icon-md.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -95,28 +94,6 @@
         .play-icon {
             font-size: 24px;
         }
-
-        .visitor-counter {
-        text-align: center;
-        color: #fff;
-        position: fixed;
-        bottom: 20px;
-        left: 0;
-        width: 100%;
-        z-index: 3;
-        user-select: none;
-    }
-
-        .visitor-counter i {
-            font-size: 24px;
-            margin-right: 5px;
-        }
-
-        #count {
-            font-size: 24px;
-            user-select: none;
-        }
-
     </style>
 </head>
 <body>
@@ -175,9 +152,7 @@
         </div>
     </div>
 
-    <div class="visitor-counter">
-        <i class="fa fa-eye"></i> <span id="count">0</span>
-    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
     <script>
         const audio = document.getElementById('audio');
@@ -194,17 +169,6 @@
                 playIcon.className = 'play-icon fa fa-play';
             }
         }
-
-        let visitorCount = localStorage.getItem('visitorCount');
-
-        if (visitorCount === null) {
-            visitorCount = 1;
-        } else {
-            visitorCount = parseInt(visitorCount) + 1;
-        }
-
-        document.getElementById('count').textContent = visitorCount;
-        localStorage.setItem('visitorCount', visitorCount.toString());
     </script>
 </body>
 </html>
