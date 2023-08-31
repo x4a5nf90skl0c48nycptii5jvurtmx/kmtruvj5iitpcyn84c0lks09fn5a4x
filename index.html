@@ -1,13 +1,124 @@
 <!DOCTYPE html>
-<html lang="en" class="default">
-    <head>
-        <link rel="stylesheet" type="text/css" href="Resources/style.css">
-        <link rel="icon" type="image/png" sizes="166x166" href="Resources/Icon.png">
-        <title>luaxx.com | Home</title>
-    </head>
-    <body>
-        <div id="particles-js"></div>
-        <script src="Resources/particles.min.js"></script>
-        <script src="Resources/app.js"></script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Resources/style.css">
+  <link rel="icon" type="image/png" sizes="166x166" href="Resources/Icon.png">
+  <title>luaxx.com | Home</title>
+  <link rel="stylesheet" href="Resources/style.css">
+  <style>
+    @font-face {
+        font-family: Centra;
+        src: url(Resources/CentraNo2Book.ttf);
+    }
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #151515;
+    }
+
+    .text-overlay {
+      display: none;
+    }
+
+    .button-container {
+      text-align: center;
+      position: absolute;
+      user-select: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Centra;
+      padding: 10px 60px;
+      background-color: transparent;
+      color: #ffffff;
+      text-decoration: none;
+      user-select: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      border: 1px solid #ffffff;
+      margin: 10px auto;
+      width: 60%;
+    }
+
+    .content-box {
+      background-color: rgba(0, 0, 0, 0);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 500px;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
+          0 0 30px rgba(255, 255, 255, 0.9);
+      }
+      100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .header-label {
+      font-family: Centra;
+      font-size: 50px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 10px 0;
+      animation: glow 2s linear infinite;
+    }
+
+    .description {
+      font-family: Centra;
+      font-size: 24px;
+      color: #ffffff;
+      margin: 30px;
+    }
+
+    .play-icon {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <script src="Resources/particles.min.js"></script>
+  <script src="Resources/app.js"></script>
+  <div class="button-container">
+    <div class="content-box">
+      <div class="header-label">luaxx</div>
+      <div class="description">This is a nice little website me and @schuh made</div>
+      <a href="luaxx.com/Projects" class="button" target="_blank" rel="noopener noreferrer">Projects</a>
+      <a href="https://discord.gg/hXUyKSCHdy" class="button" target="_blank" rel="noopener noreferrer">Silky</a>
+      <a href="https://github.com/1uaxx" class="button" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <audio id="audio" style="display: none;">
+        <source src="https://cdn.discordapp.com/attachments/1046484786107121786/1146711622698668122/7BFJvMF.mp3" type="audio/mpeg">
+      </audio>
+      <button id="playButton" class="button" onclick="toggleAudio()" style="min-inline-size: max-content; margin-bottom: 10px;">
+        <span class="play-icon fa fa-play"></span>CLICK TO WIN FREE ROBUX! </button>
+    </div>
+  </div>
+  <script>
+    const audio = document.getElementById('audio');
+
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.volume = 1;
+        audio.play();
+      }
+    }
+  </script>
+</body>
 </html>
