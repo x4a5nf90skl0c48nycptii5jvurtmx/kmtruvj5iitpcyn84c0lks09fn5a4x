@@ -3,6 +3,7 @@
 <head>
     <title>Schuh1337</title>
     <link rel="icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3209726/language-lua-icon-md.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -35,7 +36,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            border: 2px solid #ffffff;
+            border: 0px solid #ffffff;
             border-radius: 5px;
             opacity: 1;
             z-index: 2;
@@ -44,7 +45,8 @@
         }
 
         .button:not(#playButton):hover {
-            color: rgb(0, 191, 255);
+        color: rgb(255, 255, 255);
+        box-shadow: 0 0 10px rgb(255, 255, 255, 0.888);
         }
 
         .button {
@@ -63,14 +65,33 @@
             border: 1px solid #ffffff;
             margin: 10px auto;
             width: 60%;
+            position: relative;
+        }
+
+        .button .fa-left,
+        .button .fa-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+
+        .button .fa-left {
+            left: 10px;
+        }
+
+        .button .fa-right {
+            right: 10px;
         }
 
         .content-box {
-            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid rgb(255, 255, 255);
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 7px;
             text-align: center;
             width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
         }
 
         @keyframes glow {
@@ -150,23 +171,37 @@
     <div class="button-container">
         <div class="content-box">
             <div class="header-label"><< Schuh >></div>
-            <div class="description">your favorite skid</div>
-            <a href="https://discord.com/users/492707412504215552" class="button" target="_blank">Discord - @schuh</a>
-            <a href="https://www.tiktok.com/@oeari" class="button" target="_blank">TikTok</a>
-            <a href="https://github.com/Schuh1337" class="button" target="_blank">Github</a>
-            <a href="https://discord.gg/YKPumjRHSE" class="button" target="_blank" style="margin-bottom: 20px;">Silky</a>
+            <div class="description">biggest baimer in town</div>
+            <a href="https://discord.gg/YKPumjRHSE" class="button" target="_blank">
+                <i class="fab fa-discord fa-left"></i>
+                Silky
+                <i class="fab fa-discord fa-right"></i>
+            </a>
+            <a href="https://www.tiktok.com/@oeari" class="button" target="_blank">
+                <i class="fab fa-tiktok fa-left"></i>
+                TikTok
+                <i class="fab fa-tiktok fa-right"></i>
+            </a>
+            <a href="https://github.com/Schuh1337" class="button" target="_blank">
+                <i class="fab fa-github fa-left"></i>
+                Github
+                <i class="fab fa-github fa-right"></i>
+            </a>
+            <a href="https://open.spotify.com/user/ykc2ayrc9ii9oigdnc9chyn1i" class="button" target="_blank">
+                <i class="fab fa-spotify fa-left"></i>
+                Spotify
+                <i class="fab fa-spotify fa-right"></i>
+            </a>
             
             <audio id="audio" controls loop style="display: none;">
                 <source src="https://cdn.discordapp.com/attachments/947087449824321586/1145455426276708522/twisted-x-pxlish-beatz-feel-alive.mp3" type="audio/mpeg">
             </audio>
             
-            <button id="playButton" class="button" onclick="toggleAudio()" style="width: 1px; margin-bottom: 9px;">
+            <button id="playButton" class="button" onclick="toggleAudio()" style="width: 1px; margin-top: 20px; margin-bottom: -1px;">
                 <span id="playIcon" class="play-icon fa fa-play"></span>
             </button>
         </div>
     </div>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
     <script>
         const audio = document.getElementById('audio');
