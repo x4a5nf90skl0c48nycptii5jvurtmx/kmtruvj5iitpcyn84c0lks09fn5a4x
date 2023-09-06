@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schuh1337</title>
-    <link rel="icon" type="image/png" sizes="166x166" href="Resources/Icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Resources/style.css">
+  <link rel="icon" type="image/png" sizes="166x166" href="Resources/Icon.png">
+  <title>luaxx.com | Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="Resources/style.css">
+  <style>
+    body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(to top, #1e1e1e, #1e1e1e);
             color: #ffffff;
@@ -54,7 +56,60 @@
             }
         }
 
-        .description {
+    .text-overlay {
+      display: none;
+    }
+
+    .button-container {
+      text-align: center;
+      position: absolute;
+      user-select: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Centra;
+      padding: 10px 60px;
+      background-color: transparent;
+      color: #ffffff;
+      text-decoration: none;
+      user-select: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      border: 1px solid #ffffff;
+      margin: 10px auto;
+      width: 60%;
+    }
+
+    .content-box {
+      background-color: rgba(0, 0, 0, 0);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 500px;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
+          0 0 30px rgba(255, 255, 255, 0.9);
+      }
+      100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .description {
             font-size: 18px;
             margin-top: -5px;
             margin-bottom: 30px;
@@ -110,6 +165,6 @@
 
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Schuh1337">
-<meta property="og:description" content='second cool little biolink by @schuh'>
+<meta property="og:description" content='cool little biolink by @schuh'>
 <meta property="og:image" content="https://cdn.discordapp.com/attachments/1141665514230403084/1144824349149376512/5845aa45-76a5-4b07-8316-cc254c5f1ef7.png">
 <meta property="og:url" content="https://luaxx.com">
