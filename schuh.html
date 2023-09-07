@@ -1,191 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Schuh1337</title>
-    <link rel="icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3209726/language-lua-icon-md.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background-color: rgb(0, 0, 0);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Resources/style.css">
+  <link rel="icon" type="image/png" sizes="166x166" href="Resources/Icon.png">
+  <title>Schuh1337</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="Resources/style.css">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #1e1e1e;
+      font-family: 'Arial', sans-serif;
+    }
 
-        .text-overlay {
-            display: none;
-        }
+    .text-overlay {
+      display: none;
+    }
 
-        .button-container {
-            text-align: center;
-            position: absolute;
-            user-select: none;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
+    .container {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      user-select: none;
+      text-align: center;
+      width: 500px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+      margin: 0 auto;
+    }
 
-        #playButton:focus {
-            outline: none;
-        }
+    .button-container {
+      text-align: center;
+      position: absolute;
+      user-select: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
 
-        #playButton::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 0px solid #ffffff;
-            border-radius: 5px;
-            opacity: 1;
-            z-index: 2;
-            pointer-events: none;
-            outline: none;
-        }
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Arial', sans-serif;
+        padding: 14px 30px;
+        background-color: transparent;
+        color: #ffffff;
+        text-decoration: none;
+        user-select: none;
+        border-radius: 5px;
+        font-size: 18px; 
+        cursor: pointer;
+        border: 1px solid #ffffff;
+        margin: 10px auto;
+        width: 60%;
+    }
 
-        .button:not(#playButton):hover {
-        color: rgb(255, 255, 255);
-        box-shadow: 0 0 11px rgb(255, 255, 255, 0.65);
-        }
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+                     0 0 30px rgba(255, 255, 255, 0.4);
+      }
+      100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+    }
 
-        .button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Courier New', monospace;
-            padding: 10px 60px;
-            background-color: transparent;
-            color: #ffffff;
-            text-decoration: none;
-            user-select: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            border: 1px solid #ffffff;
-            margin: 10px auto;
-            width: 60%;
-            position: relative;
-        }
+    .header-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 10px 0;
+      animation: glow 2s linear infinite;
+    }
 
-        .button .fa-left,
-        .button .fa-right {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-        }
+    .description {
+      font-family: 'Arial', sans-serif;
+      font-size: 20px; 
+      color: #ffffff;
+      margin: 20px 0;
+      margin-bottom: 30px;
+    }
 
-        .button .fa-left {
-            left: 10px;
-        }
+    .play-icon {
+      font-size: 24px;
+    }
+    
+    .center-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
 
-        .button .fa-right {
-            right: 10px;
-        }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
-        .content-box {
-            border: 2px solid rgb(255, 255, 255);
-            padding: 20px;
-            border-radius: 7px;
-            text-align: center;
-            width: 500px;
-            margin: 50px;
-            margin-top: 50px;
-        }
+    .small-button {
+      font-family: 'Arial', sans-serif;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: #ffffff;
+      text-decoration: none;
+      user-select: none;
+      border-radius: 5px;
+      font-size: 20px;
+      cursor: pointer;
+      border: 1px solid #ffffff;
+      margin: 0 10px;
+      width: auto;
+      transition: box-shadow 0.2s ease-in-out;
+    }
 
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
-                             0 0 30px rgba(255, 255, 255, 0.9);
-            }
-            100% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            }
-        }
+    .profile-picture {
+      display: block;
+      margin: 0 auto;
+      max-width: 150px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
 
-        .header-label {
-            font-family: 'Courier New', monospace;
-            font-size: 50px;
-            color: #ffffff;
-            margin: 10px 0;
-            animation: glow 2s linear infinite;
-        }
+    .small-button:hover {
+        background-color: transparent;
+        border-color: #ffffff;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+        color: #ffffff;
+    }
 
-        .description {
-            font-family: 'Courier New', monospace;
-            font-size: 24px;
-            color: #ffffff;
-            margin: 30px;
-        }
-
-        .button:focus {
-            outline: none;
-        }
-
-        .play-icon {
-            font-size: 24px;
-        }
-    </style>
+  </style>
 </head>
-    <div class="button-container">
-        <div class="content-box">
-            <div class="header-label"><< Schuh >></div>
-            <div class="description">i like schnitzel</div>
-            <a href="https://discord.gg/YKPumjRHSE" class="button" target="_blank">
-                <i class="fab fa-discord fa-left"></i>
-                Silky
-                <i class="fab fa-discord fa-right"></i>
-            </a>
-            <a href="https://www.tiktok.com/@oeari" class="button" target="_blank">
-                <i class="fab fa-tiktok fa-left"></i>
-                TikTok
-                <i class="fab fa-tiktok fa-right"></i>
-            </a>
-            <a href="https://github.com/Schuh1337" class="button" target="_blank">
-                <i class="fab fa-github fa-left"></i>
-                Github
-                <i class="fab fa-github fa-right"></i>
-            </a>
-            <a href="https://open.spotify.com/user/ykc2ayrc9ii9oigdnc9chyn1i" class="button" target="_blank">
-                <i class="fab fa-spotify fa-left"></i>
-                Spotify
-                <i class="fab fa-spotify fa-right"></i>
-            </a>
-            
-            <audio id="audio" controls loop style="display: none;">
-                <source src="https://cdn.discordapp.com/attachments/1132676145574326353/1147013673718644756/title.mp3" type="audio/mpeg">
-            </audio>
-            
-            <button id="playButton" class="button" onclick="toggleAudio()" style="width: 1px; margin-top: 20px; margin-bottom: -1px;">
-                <span id="playIcon" class="play-icon fa fa-play"></span>
-            </button>
-        </div>
+<body>
+  <div id="particles-js"></div>
+  <script src="Resources/particles.min.js"></script>
+  <script src="Resources/app.js"></script>
+  <div class="center-box">
+    <div class="container">
+      <img src="https://cdn.discordapp.com/avatars/492707412504215552/a_ac523bc42dcc0d3e7eec195e754620ff.gif?size=1024" alt="Profile Picture" class="profile-picture">
+      <div class="header-label">Schuh</div>
+      <div class="description">skidding™ since 1983</div>
+      <div class="button-group">
+        <a href="https://discord.gg/YKPumjRHSE" class="small-button" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-discord"></i> Silky
+        </a>
+        <a href="https://www.tiktok.com/@oeari" class="small-button" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-tiktok"></i> TikTok
+        </a>
+        <a href="https://github.com/Schuh1337" class="small-button" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
     </div>
-    <script>
-        const audio = document.getElementById('audio');
-        const playButton = document.getElementById('playButton');
-        const playIcon = document.getElementById('playIcon');
-
-        function toggleAudio() {
-            if (audio.paused) {
-                audio.volume = 1;
-                audio.play();
-                playIcon.className = 'play-icon fa fa-pause';
-            } else {
-                audio.pause();
-                playIcon.className = 'play-icon fa fa-play';
-            }
-        }
-    </script>
+  </div>
 </body>
 </html>
 
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Schuh1337">
-<meta property="og:description" content='cool little biolink by @schuh'>
-<meta property="og:image" content="https://cdn.discordapp.com/attachments/1141665514230403084/1144824349149376512/5845aa45-76a5-4b07-8316-cc254c5f1ef7.png">
+<meta property="og:description" content='join luaxx.com/silky if youre reading this'>
+<meta property="og:image" content="https://cdn.discordapp.com/attachments/1091451079851507844/1149272131495002122/silky2.png">
 <meta property="og:url" content="https://luaxx.com">
