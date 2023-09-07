@@ -23,6 +23,17 @@
       display: none;
     }
 
+    .container {
+      background-color: transparent;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 500px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1),
+                  0 0 30px rgba(255, 255, 255, 0.1);
+      margin: 0 auto;
+    }
+
     .button-container {
       text-align: center;
       position: absolute;
@@ -49,14 +60,6 @@
       border: 1px solid #ffffff;
       margin: 10px auto;
       width: 60%;
-    }
-
-    .content-box {
-      background-color: rgba(0, 0, 0, 0);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      width: 500px;
     }
 
     @keyframes glow {
@@ -120,6 +123,16 @@
       margin: 0 10px;
       width: auto;
     }
+
+    .profile-picture {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -127,17 +140,15 @@
   <script src="Resources/particles.min.js"></script>
   <script src="Resources/app.js"></script>
   <div class="center-box">
-    <div class="content-box">
-      <div class="header-label">luaxx</div>
-      <div class="description">This is a nice little website me and @schuh made</div>
+    <div class="container">
+      <img src="https://cdn.discordapp.com/avatars/492707412504215552/a_ac523bc42dcc0d3e7eec195e754620ff.gif?size=1024" alt="Profile Picture" class="profile-picture">
+      <div class="header-label">Schuh</div>
+      <div class="description">yeah</div>
       <div class="button-group">
         <a href="luaxx.com" class="small-button" target="_blank" rel="noopener noreferrer">Projects</a>
         <a href="https://discord.gg/hXUyKSCHdy" class="small-button" target="_blank" rel="noopener noreferrer">Silky</a>
         <a href="https://github.com/1uaxx" class="small-button" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
-      <audio id="audio" style="display: none;">
-        <source src="https://cdn.discordapp.com/attachments/1046484786107121786/1146711622698668122/7BFJvMF.mp3" type="audio/mpeg">
-      </audio>
     </div>
   </div>
 </body>
