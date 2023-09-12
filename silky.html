@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silky.lua</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             user-select: none;
@@ -32,7 +34,7 @@
         }
         .button {
             display: inline-block;
-            padding: 15px 20px;
+            padding: 16px 22px;
             background-color: transparent;
             color: rgb(255, 255, 255);
             text-decoration: none;
@@ -44,7 +46,7 @@
             font-size: 16px;
         }
 
-        .button:hover {
+        .button:hover:not(#play-pause-button) {
             text-shadow: 0 0 10px rgb(255, 255, 255);
         }
         .center-box {
@@ -54,7 +56,7 @@
             text-align: center;
             border-radius: 5px;
             width: 400px;
-            margin-top: 110px;
+            margin-top: 95px;
             font-size: 17px;
         }
 
@@ -64,11 +66,11 @@
         }
 
         .glow-text {
-        font-size: 55px;
-        font-family: 'aligator';
-        color: white;
-        font-weight: 100;
-    }
+            font-size: 55px;
+            font-family: 'aligator';
+            color: white;
+            font-weight: 100;
+        }
     </style>
 </head>
 <body>
@@ -78,10 +80,31 @@
         <a href="https://discord.com/api/oauth2/authorize?client_id=1045757063621521458&permissions=8&scope=bot" class="button" target="_blank">bot   </a>
     </div>
     
-    </div>
     <div class="center-box">
         <h1><span class="glow-text">< Silky.lua ></span></h1>
         <p style="margin-top: -10px;">for skids, by skids</p>
+        <div id="audio-controls">
+            <button id="play-pause-button" class="button" onclick="togglePlayPause()">
+                <i id="play-pause-icon" class="fa fa-play"></i>
+            </button>
+        </div>
+        <audio id="audio-player" src="https://cdn.discordapp.com/attachments/1132676145574326353/1151102028504911922/0912.MP3" loop></audio>
     </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audio-player');
+        const playPauseButton = document.getElementById('play-pause-button');
+        const playPauseIcon = document.getElementById('play-pause-icon');
+
+        function togglePlayPause() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseIcon.className = 'fa fa-pause';
+            } else {
+                audioPlayer.pause();
+                playPauseIcon.className = 'fa fa-play';
+            }
+        }
+    </script>
 </body>
 </html>
