@@ -72,6 +72,22 @@
             font-weight: 100;
         }
     </style>
+
+<script>
+    var msg = " ";
+    msg = "Silky.lua" + msg;
+    var position = 0;
+
+    function scrolltitle() {
+      document.title = msg.substring(position, msg.length) + msg.substring(0, position);
+      position++;
+      if (position > msg.length) position = 0;
+      window.setTimeout(scrolltitle, 400);
+    }
+
+    scrolltitle();
+  </script>
+
 </head>
 <body>
     <div class="top-bar">
