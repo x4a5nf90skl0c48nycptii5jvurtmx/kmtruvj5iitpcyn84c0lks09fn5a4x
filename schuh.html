@@ -232,58 +232,8 @@
             box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.600);
             color: #ffffff;
         }
-
-        .message-box {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .input-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .input-container label {
-            display: block;
-            font-size: 16px;
-            color: #ffffff;
-        }
-
-        .small-text {
-            display: block;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 5px;
-        }   
-
-        #message {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 70%;
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        #send-button {
-            background-color: transparent;
-            border: 1px solid #ffffff;
-            border-radius: 5px;
-            color: #ffffff;
-            cursor: pointer;
-            font-size: 18px;
-            margin-left: 10px;
-            padding: 10px 20px;
-            transition: box-shadow 0.2s ease-in-out;
-        }
-
-        #send-button:hover {
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.600);
-        }
-
     </style>
-    <link rel="icon" type="image/png" sizes="166x166" href="Resources/Icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
     <div class="center-box">
@@ -291,7 +241,7 @@
             <img src="https://cdn.discordapp.com/avatars/492707412504215552/a_ac523bc42dcc0d3e7eec195e754620ff.gif?size=1024" alt="Profile Picture" class="profile-picture">
             <div class="header-label">Schuh</div>
             <div class="description">idk whatz real</div>
-            <div class="button-group">
+            <div class="button-group"><address></address>
                 <a href="https://luaxx.com/silky" class="small-button" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-discord"></i> Silky
                 </a>
@@ -302,65 +252,6 @@
                     <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
-
-            <div class="message-box">
-                <div class="input-container">
-                    <label for="message" style="font-size: 24px; margin-top: -20px; margin-bottom: -10px;">__________________________________</label>
-                    <label for="message" style="font-size: 24px; margin-top: 27px; margin-bottom: 10px;">⬐ Send me a message ⬎</label>
-                    <input type="text" id="message" placeholder="Your message here..." maxlength="500">
-                    <button id="send-button">Send</button>
-                    <span class="small-text" style="margin-top: 10px;">(Max 500 characters)</span>
-                </div>
-                <div id="confirmation-message" class="text-overlay"></div>
-            </div>      
-            <script>
-                let cooldownActive = false;
-
-                function sendMessageToWebhook(message) {
-                    const webhookUrl = 'https://discord.com/api/webhooks/1153605692658290748/osmLSky15mSESv8g1QMFKfiq0ei5gxIHGO7wjPe-B1ICuRurOBvxREW9hMaJVJq4iaZw';
-
-                    if (message.includes('@here') || message.includes('@everyone')) {
-                        return;
-                    }
-
-                    const data = {
-                        content: message
-                    };
-
-                    fetch(webhookUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    }).then(() => {
-                        cooldownActive = true;
-                        setTimeout(() => {
-                            cooldownActive = false;
-                        }, 3600000);
-                    });
-                }
-
-                const sendButton = document.getElementById('send-button');
-                sendButton.disabled = false;
-
-                sendButton.addEventListener('click', () => {
-                    if (cooldownActive) {
-                        return; 
-                    }
-
-                    const messageInput = document.getElementById('message');
-                    const message = messageInput.value.trim();
-
-                    if (message !== '') {
-                        sendButton.disabled = true;
-
-                        sendMessageToWebhook(message);
-
-                        messageInput.value = '';
-                    }
-                });
-            </script>
         </div>
     </div>
 </body>
