@@ -44,72 +44,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></> Silky.lua</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/png" href="Resources/silkyico.png">
     <style>
         body {
-            user-select: none;
             margin: 0;
-            padding: 0;
-            font-family: monospace;
-            background-image: url('Resources/silkymountain.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
+            overflow: hidden;
+            background-color: black;
+            user-select: none;
         }
-        .top-bar {
-            background-color: transparent;
-            text-align: center;
-            padding: 10px;
-            font-family: monospace;
-            position: sticky;
+    
+        canvas {
+            position: absolute;
             top: 0;
-            display: flex;
-            justify-content: center;
+            left: 0;
         }
-        .button {
-            display: inline-block;
-            padding: 16px 22px;
-            background-color: transparent;
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            font-family: monospace;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-            font-size: 16px;
-        }
-
-        .button:hover:not(#play-pause-button) {
-            text-shadow: 0 0 10px rgb(255, 255, 255);
-        }
+    
         .center-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            
+        }
+    
+        .center-box a.button {
+            font-family: monospace;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
             background-color: transparent;
             color: white;
-            padding: 20px;
-            text-align: center;
+            border: 1px solid white;
             border-radius: 5px;
-            width: 400px;
-            margin-top: 95px;
-            font-size: 17px;
+            text-decoration: none;
+            transition: box-shadow 0.3s ease;
+        }
+    
+        .center-box a.button:hover {
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
         }
 
-        @font-face {
-            font-family: 'aligator';
-            src: url(Resources/Aligator.otf);
+            @font-face {
+        font-family: 'aligator';
+        src: url(Resources/Aligator.otf);
         }
 
-        .glow-text {
-            font-size: 55px;
-            font-family: 'aligator';
-            color: white;
-            font-weight: 100;
+        .center-box p {
+            font-size: 64px;
+            font-family: 'aligator', sans-serif;
+            margin-bottom: 20px;
+            margin-top: 14px
         }
 
         .credits-uwu {
@@ -120,41 +109,65 @@
             font-size: 12px;
             color: #ffffff;
         }
-
     </style>
+    <title>Silky</title>
 </head>
 <body>
-    <div class="top-bar">
-        <a href="https://luaxx.com/schuh" class="button" target="_blank">schuh</a>
-        <a href="https://discord.gg/YKPumjRHSE" class="button" target="_blank">discord</a>
-        <a href="https://discord.com/api/oauth2/authorize?client_id=1045757063621521458&permissions=8&scope=bot" class="button" target="_blank">bot :)</a>
-    </div>
-    
+    <canvas id="stars"></canvas>
     <div class="center-box">
-        <h1><span class="glow-text">< Silky.lua ></span></h1>
-        <p style="margin-top: -10px;">for skids, by skids</p>
-        <div id="audio-controls">
-            <button id="play-pause-button" class="button" style="margin-top: -10px;" onclick="togglePlayPause()">
-                <i id="play-pause-icon" class="fa fa-play"></i>
-            </button>
-        </div>
-        <audio id="audio-player" src="https://cdn.discordapp.com/attachments/1132676145574326353/1152114627942039572/seizure.mp3" loop></audio>
+        <p>Silky</p>
+        <a class="button" href="https://discord.gg/JRTxubKKmj" target="_blank">Silky</a>
+        <a class="button" href="https://discord.gg/JRTxubKKmj" target="_blank">Silky</a>
+        <a class="button" href="https://discord.gg/JRTxubKKmj" target="_blank">Silky</a>
     </div>
 
     <script>
-        const audioPlayer = document.getElementById('audio-player');
-        const playPauseButton = document.getElementById('play-pause-button');
-        const playPauseIcon = document.getElementById('play-pause-icon');
+        const canvas = document.getElementById('stars');
+        const ctx = canvas.getContext('2d');
 
-        function togglePlayPause() {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-                playPauseIcon.className = 'fa fa-pause';
-            } else {
-                audioPlayer.pause();
-                playPauseIcon.className = 'fa fa-play';
-            }
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
+
+        resizeCanvas();
+
+        const stars = [];
+
+        for (let i = 0; i < 200; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2 + 1,
+                opacity: Math.random(),
+                speed: Math.random() * 0.1 + 0.1
+            });
+        }
+
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < stars.length; i++) {
+                const star = stars[i];
+                star.y -= star.speed;
+
+                if (star.y < 0) {
+                    star.y = canvas.height;
+                    star.x = Math.random() * canvas.width;
+                }
+
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                ctx.fill();
+            }
+
+            requestAnimationFrame(animateStars);
+        }
+
+        animateStars();
+
+        window.addEventListener('resize', resizeCanvas);
     </script>
 
     <script>
@@ -174,7 +187,6 @@
         e.preventDefault();
     });
     </script>
-
-<div class="credits-uwu">Made by Schuh</div>
+    <div class="credits-uwu">Made by Schuh</div>
 </body>
 </html>
