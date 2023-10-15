@@ -145,6 +145,24 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
 
+
+  <script>
+    document.addEventListener('keydown', function (e) {
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if ((e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) || (e.ctrlKey && e.shiftKey && e.key === 'C')) {
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+  </script>
   <script src="elements/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="elements/vendor/aos/aos.js"></script>
   <script src="elements/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
