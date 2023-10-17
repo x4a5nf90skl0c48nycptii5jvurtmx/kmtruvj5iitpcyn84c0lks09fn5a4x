@@ -1,282 +1,1 @@
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-<!-- If you're gonna skid this, please provide credits, have some sportsmanship. -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="Resources/silkyico.png">
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background-color: rgb(0, 0, 0);
-            user-select: none;
-        }
-
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .center-box {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.03);
-            padding: 20px;
-            width: 400px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.02);
-        }
-
-        .center-box a.button {
-            font-family: 'Arial', sans-serif;
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .center-box a.button:hover {
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
-        }
-
-        @font-face {
-            font-family: 'angelwish';
-            src: url(Resources/Angelwish.ttf);
-        }
-
-        .center-box p {
-            font-size: 69px; /* nice */
-            font-family: 'angelwish', sans-serif;
-            margin-bottom: 20px;
-            margin-top: 14px;
-        }
-
-        .second-box {
-            position: absolute;
-            font-family: 'Arial', sans-serif;
-            top: 70%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.03);
-            padding: 20px;
-            width: 700px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.02);
-            
-        }
-
-        .textbox {
-            background-color: transparent;
-            color: white;
-            border: 1px solid white;
-            border-radius: 5px;
-            text-align: left;
-            padding: 20px;
-        }
-
-        .textbox h2 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 0;
-        }
-
-        .textbox p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-
-        .icon {
-            width: 40px;
-            height: 40px;
-            background-size: cover;
-            background-position: center; 
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-
-        .textbox-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
-        }
-
-        .icon-1 {
-            background-image: url('Resources/chat.png');
-            margin-left: -5px;
-            width: 47px;
-            height: 40px;
-        }
-
-        .icon-2 {
-            background-image: url('Resources/bot.png');
-            margin-bottom: 6px;
-            margin-top: -1px;
-        }
-
-        .icon-3 {
-            background-image: url('Resources/mod.png');
-            margin-bottom: 6px;
-            margin-top: -1px;
-            margin-left: 5px;
-        }
-
-        .credits-uwu {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            font-family: 'Arial', sans-serif;
-            font-size: 12px;
-            color: #ffffff;
-        }
-    </style>
-    <title>Silky</title>
-</head>
-<body>
-    <canvas id="stars"></canvas>
-    <div class="center-box">
-        <p>Silky</p>
-        <a class="button" href="https://discord.com/oauth2/authorize?client_id=1045757063621521458&permissions=8&scope=bot" target="_blank">Invite</a>
-        <a class="button" href="https://top.gg/bot/1045757063621521458" target="_blank">Top.gg</a>
-    </div>
-    <div class="second-box">
-        <div class="textbox-container">
-            <div class="textbox">
-                <div class="icon icon-1"></div>
-                <h2>Fun</h2>
-                <p>Unleash Fun and Excitement with our Entertaining Commands</p>
-            </div>
-            <div class="textbox">
-                <div class="icon icon-2"></div>
-                <h2>Utility</h2>
-                <p>Enhance your Everyday Life with our Essential Utility Commands</p>
-            </div>
-            <div class="textbox">
-                <div class="icon icon-3"></div>
-                <h2>Moderation</h2>
-                <p>Foster a Safe and Inclusive Environment with our Moderation Tools</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const canvas = document.getElementById('stars');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        resizeCanvas();
-
-        const stars = [];
-
-        for (let i = 0; i < 200; i++) {
-            stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                radius: Math.random() * 2 + 1,
-                opacity: Math.random(),
-                speed: Math.random() * 0.1 + 0.1
-            });
-        }
-
-        function animateStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            for (let i = 0; i < stars.length; i++) {
-                const star = stars[i];
-                star.y -= star.speed;
-
-                if (star.y < 0) {
-                    star.y = canvas.height;
-                    star.x = Math.random() * canvas.width;
-                }
-
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-                ctx.fill();
-            }
-
-            requestAnimationFrame(animateStars);
-        }
-
-        animateStars();
-
-        window.addEventListener('resize', resizeCanvas);
-    </script>
-    <script>
-        document.addEventListener('keydown', function (e) {
-            if (e.ctrlKey && e.key === 'u') {
-                e.preventDefault();
-            }
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if ((e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) || (e.ctrlKey && e.shiftKey && e.key === 'C')) {
-                e.preventDefault();
-            }
-        });
-
-        document.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
-    });
-    </script>
-    <div class="credits-uwu">Made by Schuh</div>
-</body>
-</html>
+<script>var s="=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"..!Jg!zpv(sf!hpoob!tlje!uijt-!qmfbtf!qspwjef!dsfejut-!ibwf!tpnf!tqpsutnbotijq/!..?=\"EPDUZQF!iunm?=iunm!mboh>#fo#?=ifbe?!!!!=nfub!dibstfu>#VUG.9#?!!!!=nfub!obnf>#wjfxqpsu#!dpoufou>#xjeui>efwjdf.xjeui-!jojujbm.tdbmf>2/1#?!!!!=mjol!sfm>#jdpo#!uzqf>#jnbhf0qoh#!isfg>#Sftpvsdft0tjmlzjdp/qoh#?!!!!=tuzmf?!!!!!!!!cpez!|!!!!!!!!!!!!nbshjo;!1<!!!!!!!!!!!!pwfsgmpx;!ijeefo<!!!!!!!!!!!!cbdlhspvoe.dpmps;!shc)1-!1-!1*<!!!!!!!!!!!!vtfs.tfmfdu;!opof<!!!!!!!!~!!!!!!!!dbowbt!|!!!!!!!!!!!!qptjujpo;!bctpmvuf<!!!!!!!!!!!!upq;!1<!!!!!!!!!!!!mfgu;!1<!!!!!!!!~!!!!!!!!/dfoufs.cpy!|!!!!!!!!!!!!qptjujpo;!bctpmvuf<!!!!!!!!!!!!upq;!51&<!!!!!!!!!!!!mfgu;!61&<!!!!!!!!!!!!usbotgpsn;!usbotmbuf).61&-!.61&*<!!!!!!!!!!!!cbdlhspvoe.dpmps;!shcb)366-!366-!366-!1/14*<!!!!!!!!!!!!qbeejoh;!31qy<!!!!!!!!!!!!xjeui;!511qy<!!!!!!!!!!!!cpsefs.sbejvt;!21qy<!!!!!!!!!!!!dpmps;!xijuf<!!!!!!!!!!!!ufyu.bmjho;!dfoufs<!!!!!!!!!!!!cpy.tibepx;!1qy!1qy!31qy!shcb)366-!366-!366-!1/13*<!!!!!!!!~!!!!!!!!/dfoufs.cpy!b/cvuupo!|!!!!!!!!!!!!gpou.gbnjmz;!(Bsjbm(-!tbot.tfsjg<!!!!!!!!!!!!ejtqmbz;!jomjof.cmpdl<!!!!!!!!!!!!qbeejoh;!21qy!31qy<!!!!!!!!!!!!nbshjo;!21qy<!!!!!!!!!!!!cbdlhspvoe.dpmps;!usbotqbsfou<!!!!!!!!!!!!dpmps;!xijuf<!!!!!!!!!!!!cpsefs;!2qy!tpmje!xijuf<!!!!!!!!!!!!cpsefs.sbejvt;!6qy<!!!!!!!!!!!!ufyu.efdpsbujpo;!opof<!!!!!!!!!!!!usbotjujpo;!cpy.tibepx!1/4t!fbtf<!!!!!!!!~!!!!!!!!/dfoufs.cpy!b/cvuupo;ipwfs!|!!!!!!!!!!!!cpy.tibepx;!1qy!1qy!21qy!shcb)366-!366-!366-!1/5*<!!!!!!!!~!!!!!!!!Agpou.gbdf!|!!!!!!!!!!!!gpou.gbnjmz;!(bohfmxjti(<!!!!!!!!!!!!tsd;!vsm)Sftpvsdft0Bohfmxjti/uug*<!!!!!!!!~!!!!!!!!/dfoufs.cpy!q!|!!!!!!!!!!!!gpou.tj{f;!7:qy<!0+!ojdf!+0!!!!!!!!!!!!gpou.gbnjmz;!(bohfmxjti(-!tbot.tfsjg<!!!!!!!!!!!!nbshjo.cpuupn;!31qy<!!!!!!!!!!!!nbshjo.upq;!25qy<!!!!!!!!~!!!!!!!!/tfdpoe.cpy!|!!!!!!!!!!!!qptjujpo;!bctpmvuf<!!!!!!!!!!!!gpou.gbnjmz;!(Bsjbm(-!tbot.tfsjg<!!!!!!!!!!!!upq;!81&<!!!!!!!!!!!!mfgu;!61&<!!!!!!!!!!!!usbotgpsn;!usbotmbuf).61&-!.61&*<!!!!!!!!!!!!cbdlhspvoe.dpmps;!shcb)366-!366-!366-!1/14*<!!!!!!!!!!!!qbeejoh;!31qy<!!!!!!!!!!!!xjeui;!811qy<!!!!!!!!!!!!cpsefs.sbejvt;!21qy<!!!!!!!!!!!!dpmps;!xijuf<!!!!!!!!!!!!ufyu.bmjho;!dfoufs<!!!!!!!!!!!!cpy.tibepx;!1qy!1qy!31qy!shcb)366-!366-!366-!1/13*<!!!!!!!!!!!!!!!!!!!!~!!!!!!!!/ufyucpy!|!!!!!!!!!!!!cbdlhspvoe.dpmps;!usbotqbsfou<!!!!!!!!!!!!dpmps;!xijuf<!!!!!!!!!!!!cpsefs;!2qy!tpmje!xijuf<!!!!!!!!!!!!cpsefs.sbejvt;!6qy<!!!!!!!!!!!!ufyu.bmjho;!mfgu<!!!!!!!!!!!!qbeejoh;!31qy<!!!!!!!!~!!!!!!!!/ufyucpy!i3!|!!!!!!!!!!!!gpou.tj{f;!35qy<!!!!!!!!!!!!gpou.xfjhiu;!cpme<!!!!!!!!!!!!nbshjo.upq;!1<!!!!!!!!~!!!!!!!!/ufyucpy!q!|!!!!!!!!!!!!gpou.tj{f;!27qy<!!!!!!!!!!!!nbshjo;!21qy!1<!!!!!!!!~!!!!!!!!/jdpo!|!!!!!!!!!!!!xjeui;!51qy<!!!!!!!!!!!!ifjhiu;!51qy<!!!!!!!!!!!!cbdlhspvoe.tj{f;!dpwfs<!!!!!!!!!!!!cbdlhspvoe.qptjujpo;!dfoufs<!!!!!!!!!!!!!ejtqmbz;!jomjof.cmpdl<!!!!!!!!!!!!wfsujdbm.bmjho;!njeemf<!!!!!!!!!!!!nbshjo.sjhiu;!21qy<!!!!!!!!~!!!!!!!!/ufyucpy.dpoubjofs!|!!!!!!!!!!!!ejtqmbz;!hsje<!!!!!!!!!!!!hsje.ufnqmbuf.dpmvnot;!sfqfbu)4-!2gs*<!!!!!!!!!!!!hsje.hbq;!21qy<!!!!!!!!~!!!!!!!!/jdpo.2!|!!!!!!!!!!!!cbdlhspvoe.jnbhf;!vsm)(Sftpvsdft0dibu/qoh(*<!!!!!!!!!!!!nbshjo.mfgu;!.6qy<!!!!!!!!!!!!xjeui;!58qy<!!!!!!!!!!!!ifjhiu;!51qy<!!!!!!!!~!!!!!!!!/jdpo.3!|!!!!!!!!!!!!cbdlhspvoe.jnbhf;!vsm)(Sftpvsdft0cpu/qoh(*<!!!!!!!!!!!!nbshjo.cpuupn;!7qy<!!!!!!!!!!!!nbshjo.upq;!.2qy<!!!!!!!!~!!!!!!!!/jdpo.4!|!!!!!!!!!!!!cbdlhspvoe.jnbhf;!vsm)(Sftpvsdft0npe/qoh(*<!!!!!!!!!!!!nbshjo.cpuupn;!7qy<!!!!!!!!!!!!nbshjo.upq;!.2qy<!!!!!!!!!!!!nbshjo.mfgu;!6qy<!!!!!!!!~!!!!!!!!/dsfejut.vxv!|!!!!!!!!!!!!qptjujpo;!gjyfe<!!!!!!!!!!!!cpuupn;!21qy<!!!!!!!!!!!!mfgu;!21qy<!!!!!!!!!!!!gpou.gbnjmz;!(Bsjbm(-!tbot.tfsjg<!!!!!!!!!!!!gpou.tj{f;!23qy<!!!!!!!!!!!!dpmps;!$gggggg<!!!!!!!!~!!!!=0tuzmf?!!!!=ujumf?Tjmlz=0ujumf?=0ifbe?=cpez?!!!!=dbowbt!je>#tubst#?=0dbowbt?!!!!=ejw!dmbtt>#dfoufs.cpy#?!!!!!!!!=q?Tjmlz=0q?!!!!!!!!=b!dmbtt>#cvuupo#!isfg>#iuuqt;00ejtdpse/dpn0pbvui30bvuipsj{f@dmjfou`je>2156868174732632569\'qfsnjttjpot>9\'tdpqf>cpu#!ubshfu>#`cmbol#?Jowjuf=0b?!!!!!!!!=b!dmbtt>#cvuupo#!isfg>#iuuqt;00upq/hh0cpu02156868174732632569#!ubshfu>#`cmbol#?Upq/hh=0b?!!!!=0ejw?!!!!=ejw!dmbtt>#tfdpoe.cpy#?!!!!!!!!=ejw!dmbtt>#ufyucpy.dpoubjofs#?!!!!!!!!!!!!=ejw!dmbtt>#ufyucpy#?!!!!!!!!!!!!!!!!=ejw!dmbtt>#jdpo!jdpo.2#?=0ejw?!!!!!!!!!!!!!!!!=i3?Gvo=0i3?!!!!!!!!!!!!!!!!=q?Vomfbti!Gvo!boe!Fydjufnfou!xjui!pvs!Foufsubjojoh!Dpnnboet=0q?!!!!!!!!!!!!=0ejw?!!!!!!!!!!!!=ejw!dmbtt>#ufyucpy#?!!!!!!!!!!!!!!!!=ejw!dmbtt>#jdpo!jdpo.3#?=0ejw?!!!!!!!!!!!!!!!!=i3?Vujmjuz=0i3?!!!!!!!!!!!!!!!!=q?Foibodf!zpvs!Fwfszebz!Mjgf!xjui!pvs!Fttfoujbm!Vujmjuz!Dpnnboet=0q?!!!!!!!!!!!!=0ejw?!!!!!!!!!!!!=ejw!dmbtt>#ufyucpy#?!!!!!!!!!!!!!!!!=ejw!dmbtt>#jdpo!jdpo.4#?=0ejw?!!!!!!!!!!!!!!!!=i3?Npefsbujpo=0i3?!!!!!!!!!!!!!!!!=q?Gptufs!b!Tbgf!boe!Jodmvtjwf!Fowjsponfou!xjui!pvs!Npefsbujpo!Uppmt=0q?!!!!!!!!!!!!=0ejw?!!!!!!!!=0ejw?!!!!=0ejw?!!!!=tdsjqu?!!!!!!!!dpotu!dbowbt!>!epdvnfou/hfuFmfnfouCzJe)(tubst(*<!!!!!!!!dpotu!duy!>!dbowbt/hfuDpoufyu)(3e(*<!!!!!!!!gvodujpo!sftj{fDbowbt)*!|!!!!!!!!!!!!dbowbt/xjeui!>!xjoepx/joofsXjeui<!!!!!!!!!!!!dbowbt/ifjhiu!>!xjoepx/joofsIfjhiu<!!!!!!!!~!!!!!!!!sftj{fDbowbt)*<!!!!!!!!dpotu!tubst!>!\\^<!!!!!!!!gps!)mfu!j!>!1<!j!=!311<!j,,*!|!!!!!!!!!!!!tubst/qvti)|!!!!!!!!!!!!!!!!y;!Nbui/sboepn)*!+!dbowbt/xjeui-!!!!!!!!!!!!!!!!z;!Nbui/sboepn)*!+!dbowbt/ifjhiu-!!!!!!!!!!!!!!!!sbejvt;!Nbui/sboepn)*!+!3!,!2-!!!!!!!!!!!!!!!!pqbdjuz;!Nbui/sboepn)*-!!!!!!!!!!!!!!!!tqffe;!Nbui/sboepn)*!+!1/2!,!1/2!!!!!!!!!!!!~*<!!!!!!!!~!!!!!!!!gvodujpo!bojnbufTubst)*!|!!!!!!!!!!!!duy/dmfbsSfdu)1-!1-!dbowbt/xjeui-!dbowbt/ifjhiu*<!!!!!!!!!!!!gps!)mfu!j!>!1<!j!=!tubst/mfohui<!j,,*!|!!!!!!!!!!!!!!!!dpotu!tubs!>!tubst\\j^<!!!!!!!!!!!!!!!!tubs/z!.>!tubs/tqffe<!!!!!!!!!!!!!!!!jg!)tubs/z!=!1*!|!!!!!!!!!!!!!!!!!!!!tubs/z!>!dbowbt/ifjhiu<!!!!!!!!!!!!!!!!!!!!tubs/y!>!Nbui/sboepn)*!+!dbowbt/xjeui<!!!!!!!!!!!!!!!!~!!!!!!!!!!!!!!!!duy/cfhjoQbui)*<!!!!!!!!!!!!!!!!duy/bsd)tubs/y-!tubs/z-!tubs/sbejvt-!1-!Nbui/QJ!+!3*<!!!!!!!!!!!!!!!!duy/gjmmTuzmf!>!ashcb)366-!366-!366-!%|tubs/pqbdjuz~*a<!!!!!!!!!!!!!!!!duy/gjmm)*<!!!!!!!!!!!!~!!!!!!!!!!!!sfrvftuBojnbujpoGsbnf)bojnbufTubst*<!!!!!!!!~!!!!!!!!bojnbufTubst)*<!!!!!!!!xjoepx/beeFwfouMjtufofs)(sftj{f(-!sftj{fDbowbt*<!!!!=0tdsjqu?!!!!=tdsjqu?!!!!!!!!epdvnfou/beeFwfouMjtufofs)(lfzepxo(-!gvodujpo!)f*!|!!!!!!!!!!!!jg!)f/dusmLfz!\'\'!f/lfz!>>>!(v(*!|!!!!!!!!!!!!!!!!f/qsfwfouEfgbvmu)*<!!!!!!!!!!!!~!!!!!!!!~*<!!!!!!!!epdvnfou/beeFwfouMjtufofs)(lfzepxo(-!gvodujpo!)f*!|!!!!!!!!!!!!jg!))f/lfz!>>>!(G23(!}}!)f/dusmLfz!\'\'!f/tijguLfz!\'\'!f/lfz!>>>!(J(**!}}!)f/dusmLfz!\'\'!f/tijguLfz!\'\'!f/lfz!>>>!(D(**!|!!!!!!!!!!!!!!!!f/qsfwfouEfgbvmu)*<!!!!!!!!!!!!~!!!!!!!!~*<!!!!!!!!epdvnfou/beeFwfouMjtufofs)(dpoufyunfov(-!gvodujpo!)f*!|!!!!!!!!f/qsfwfouEfgbvmu)*<!!!!~*<!!!!=0tdsjqu?!!!!=ejw!dmbtt>#dsfejut.vxv#?Nbef!cz!Tdivi=0ejw?=0cpez?=0iunm?";var m="";for(var i=0;i<s.length;i++)m+=String.fromCharCode(s.charCodeAt(i)-1);document.write(m);</script><noscript>>Enable JavaScript in your browser to be able to view this site. </noscript>
